@@ -123,26 +123,26 @@ _____________________|______________________|______________________
       Board A2       |       Board B2       |        Board C2
                      |                      | 
       |     |        |       |     |        |        |     |    
-  A10 | B10 | C10    |   A13 | B13 | C13    |    A16 | B16 | C16  
+  a10 | b10 | c10    |   a13 | b13 | c13    |    a16 | b16 | c16  
  _____|_____|_____   |  _____|_____|_____   |   _____|_____|_____
       |     |        |       |     |        |        |     |    
-  A11 | B11 | C11    |   A14 | B14 | C14    |    A17 | B17 | C17  
+  a11 | b11 | c11    |   a14 | b14 | c14    |    a17 | b17 | c17  
  _____|_____|_____   |  _____|_____|_____   |   _____|_____|_____
       |     |        |       |     |        |        |     |    
-  A12 | B12 | C12    |   A15 | B15 | C15    |    A18 | B18 | C18  
+  a12 | b12 | c12    |   a15 | b15 | c15    |    a18 | b18 | c18  
       |     |        |       |     |        |        |     |
 _____________________|______________________|______________________
                      |                      |
       Board A3       |       Board B3       |        Board C3
                      |                      | 
       |     |        |       |     |        |        |     |    
-  A19 | B19 | C19    |   A22 | B22 | C22    |    A25 | B25 | C25  
+  a19 | b19 | c19    |   a22 | b22 | c22    |    a25 | b25 | c25  
  _____|_____|_____   |  _____|_____|_____   |   _____|_____|_____
       |     |        |       |     |        |        |     |    
-  A20 | B20 | C20    |   A23 | B23 | C23    |    A26 | B26 | C26  
+  a20 | b20 | c20    |   a23 | b23 | c23    |    a26 | b26 | c26  
  _____|_____|_____   |  _____|_____|_____   |   _____|_____|_____
       |     |        |       |     |        |        |     |    
-  A21 | B21 | C21    |   A24 | B24 | C24    |    A27 | B27 | C27  
+  a21 | b21 | c21    |   a24 | b24 | c24    |    a27 | b27 | c27  
       |     |        |       |     |        |        |     |                                                 
 '''
    list_of_boards = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
@@ -166,9 +166,9 @@ _____________________|______________________|______________________
 
    initial_board = input(f"{player1}, enter the board where you want to start: ").upper() #initial move of the game
 
-   player1_move = input("Enter the coordinate where you want to place the piece: ")
-   big_board = big_board.replace(player1_move, Fore.RED + Style.BRIGHT + " X " + Fore.RESET + Style.RESET_ALL)\
-      if len(player1_move) == 3 else big_board.replace(player1_move, Fore.RED + Style.BRIGHT + "X " + Fore.RESET + Style.RESET_ALL)
+   player1_move = input("Enter the coordinate where you want to place the piece: ").lower()
+   big_board = big_board.replace(player1_move, Fore.RED + Style.BRIGHT + " X " + Fore.RESET + Style.RESET_ALL, 1)\
+      if len(player1_move) == 3 else big_board.replace(player1_move, Fore.RED + Style.BRIGHT + "X " + Fore.RESET + Style.RESET_ALL, 1)
 
    relative_player1_move = f"{player1_move[0].lower()}{int(player1_move[1:])%3}" #used to determine next_board
    if "0" in relative_player1_move:
@@ -186,9 +186,9 @@ _____________________|______________________|______________________
          print(f"{player2}, you may play in any board.")
          next_board = input("Enter the board where you want to play: ").upper()
 
-      player2_move = input("Enter the coordinate where you want to place the piece: ")
-      big_board = big_board.replace(player2_move, Fore.GREEN + Style.BRIGHT + " O " + Fore.RESET + Style.RESET_ALL)\
-      if len(player2_move) == 3 else big_board.replace(player2_move, Fore.GREEN + Style.BRIGHT + "O " + Fore.RESET + Style.RESET_ALL) #to maintain aesthetic
+      player2_move = input("Enter the coordinate where you want to place the piece: ").lower()
+      big_board = big_board.replace(player2_move, Fore.GREEN + Style.BRIGHT + " O " + Fore.RESET + Style.RESET_ALL, 1)\
+      if len(player2_move) == 3 else big_board.replace(player2_move, Fore.GREEN + Style.BRIGHT + "O " + Fore.RESET + Style.RESET_ALL, 1) #to maintain aesthetic
 
       relative_player2_move = f"{player2_move[0].lower()}{int(player2_move[1:])%3}" #same logic as previous one
       if "0" in relative_player2_move:
@@ -230,9 +230,9 @@ _____________________|______________________|______________________
          print(f"{player1}, you may play in any board.")
          next_board = input("Enter the board where you want to play: ").upper()
 
-      player1_move = input("Enter the coordinate where you want to place the piece: ")
-      big_board = big_board.replace(player1_move, Fore.RED + Style.BRIGHT + " X " + Fore.RESET + Style.RESET_ALL)\
-      if len(player1_move) == 3 else big_board.replace(player1_move, Fore.RED + Style.BRIGHT + "X " + Fore.RESET + Style.RESET_ALL)
+      player1_move = input("Enter the coordinate where you want to place the piece: ").lower()
+      big_board = big_board.replace(player1_move, Fore.RED + Style.BRIGHT + " X " + Fore.RESET + Style.RESET_ALL, 1)\
+      if len(player1_move) == 3 else big_board.replace(player1_move, Fore.RED + Style.BRIGHT + "X " + Fore.RESET + Style.RESET_ALL, 1)
 
       relative_player1_move = f"{player1_move[0].lower()}{int(player1_move[1:])%3}"
       if "0" in relative_player1_move:
