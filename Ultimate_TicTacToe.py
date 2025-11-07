@@ -8,7 +8,7 @@ O_WINNER_DECLARATION = Fore.GREEN + Style.BRIGHT + "Won by O" + Fore.RESET + Sty
 DRAW_DECLARATION = Fore.BLUE + Style.BRIGHT + " Drawn " + Fore.RESET + Style.RESET_ALL
 
 UTT_BOARD = '''
-      Board 1        |       Board 2        |        Board 3
+      Board 1        |       Board 2        |        Board 3 
                      |                      | 
       |     |        |       |     |        |        |     |    
    a1 |  a2 |  a3    |    b1 |  b2 |  b3    |     c1 |  c2 |  c3  
@@ -21,7 +21,7 @@ UTT_BOARD = '''
       |     |        |       |     |        |        |     |
 _____________________|______________________|______________________
                      |                      |
-      Board 4        |       Board 5        |        Board 6
+      Board 4        |       Board 5        |        Board 6 
                      |                      | 
       |     |        |       |     |        |        |     |    
    d1 |  d2 |  d3    |    e1 |  e2 |  e3    |     f1 |  f2 |  f3  
@@ -34,7 +34,7 @@ _____________________|______________________|______________________
       |     |        |       |     |        |        |     |
 _____________________|______________________|______________________
                      |                      |
-      Board 7        |       Board 8        |        Board 9
+      Board 7        |       Board 8        |        Board 9 
                      |                      | 
       |     |        |       |     |        |        |     |    
    g1 |  g2 |  g3    |    h1 |  h2 |  h3    |     i1 |  i2 |  i3  
