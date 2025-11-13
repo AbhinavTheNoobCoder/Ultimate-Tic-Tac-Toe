@@ -179,6 +179,10 @@ def main():
             # if coordinated has already been taken
             raise ValueError(f"Coordinate {o_move} was already used in earlier moves.")
 
+        if board_used.check_winner() != "Playable Board":
+            # player played in an unplayable board
+            raise ValueError(f"Board {board_used_num} was used despite having a result.")
+        
         board_used.o.add(int(o_move[1])) # marking the coordinate in the board's relevant set
         board_num_redirected_to = int(o_move[1])
 
@@ -224,6 +228,10 @@ def main():
         if (int(x_move[1]) in (board_used.x).union(board_used.o)):
             raise ValueError(f"Coordinate {x_move} was already used in earlier moves.")
 
+        if board_used.check_winner() != "Playable Board":
+            # player played in an unplayable board
+            raise ValueError(f"Board {board_used_num} was used despite having a result.")
+        
         board_used.x.add(int(x_move[1]))
         board_num_redirected_to = int(x_move[1])
 
